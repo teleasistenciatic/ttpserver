@@ -5,6 +5,8 @@
         <group>
             <file>file:/C:/xampp/htdocs/ttpserver/app/Http/routes.php</file>
             <file>file:/C:/xampp/htdocs/ttpserver/public/index.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/resources/views/app.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Http/Controllers/ServerStateController.php</file>
         </group>
     </open-files>
 </project-private>

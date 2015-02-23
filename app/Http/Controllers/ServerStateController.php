@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class WelcomeController extends Controller {
+class ServerStateController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +30,13 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+                $id = 'NONE';
+		return view('serverstate')->with('id',$id);
 	}
-
+        
+        public function show($id) {
+            
+            	  return view('serverstate')->with('id',$id);
+            
+        }
 }

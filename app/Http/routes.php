@@ -11,10 +11,13 @@
 |
 */
 
-//Controlador de estado de servidor
-Route::get('/', 'StatusServerController@index');
+Route::get('/', 'WelcomeController@index');
 
-//Route::get('/', 'WelcomeController@index');
+/////////////////////////////////////////////////////////////////
+//Controlador de estado de servidor
+Route::get('serverstatus', 'ServerStateController@index');
+Route::get('serverstatus/{id}', 'ServerStateController@show');
+/////////////////////////////////////////////////////////////////
 
 Route::get('home', 'HomeController@index');
 
