@@ -38,8 +38,12 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+                            <!-- FESEJU -->
+                            <div><img src="img\logo_teleasistencia.jpg" width ="300"></div>
+                            <div class="title">Teleasistenci@TIC+</div>
+                                <div class="quote">Tecnología para personas</div>
+                                <div><a href="http://www.magtel.es/fundacion-magtel.php?mn=6" target="new"><img src="img\logo_fundacion_magtel.png" width ="250"></a></div>                                
+				<!-- <div class="quote">{{ Inspiring::quote() }}</div> -->
 			</div>
 		</div>
 	</body>

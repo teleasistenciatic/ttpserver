@@ -13,11 +13,26 @@
 
 Route::get('/', 'WelcomeController@index');
 
-/////////////////////////////////////////////////////////////////
-//Controlador de estado de servidor
-Route::get('serverstatus', 'ServerStateController@index');
-Route::get('serverstatus/{id}', 'ServerStateController@show');
-/////////////////////////////////////////////////////////////////
+/*
+|--------------------------------------------------------------------------
+| Estado del servidor
+|--------------------------------------------------------------------------
+*/
+Route::get('serverstatus', 'Server\ServerStateController@index');
+Route::get('serverstatus/{id}', 'Server\ServerStateController@show');
+
+/*
+|--------------------------------------------------------------------------
+| Comprobación de usuario de movil y envío de tokens de sesión
+|--------------------------------------------------------------------------
+*/
+Route::get('phone/check/{id}', 'Phone\PhoneController@authenticate');
+
+/*
+|--------------------------------------------------------------------------
+| Autenticación y registro autogenerados
+|--------------------------------------------------------------------------
+*/
 
 Route::get('home', 'HomeController@index');
 

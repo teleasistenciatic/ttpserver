@@ -1,16 +1,18 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Server;
+
+use App\Http\Controllers\Controller;
 
 class ServerStateController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Welcome Controller
+	| Server State controller
 	|--------------------------------------------------------------------------
 	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
+	| Controlador que comprueba el estado online del servidor
+        | La versión cliente, dentro de sus opciones de comprobación de conexión,
+        | intenta leer este controlador http://servidor/serverstatus y almacenarlo
+	| en una cadena de texto. 
 	*/
 
 	/**
@@ -30,10 +32,15 @@ class ServerStateController extends Controller {
 	 */
 	public function index()
 	{
-                $id = 'NONE';
+                $id = '';
 		return view('serverstate')->with('id',$id);
 	}
         
+	/**
+	 * Dummy: sólo para ver que funciona la carga de parámetros para un controlador
+	 *
+	 * @return Response
+	 */        
         public function show($id) {
             
             	  return view('serverstate')->with('id',$id);
