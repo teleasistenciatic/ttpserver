@@ -1,7 +1,8 @@
 <?php namespace App\Http\Controllers\Phone;
 
 use App\Http\Controllers\Controller;
-use \Illuminate\Support\Facades\DB;
+use App\Models\PhoneModel;
+
 
 class PhoneController extends Controller {
 
@@ -14,40 +15,23 @@ class PhoneController extends Controller {
         | de comprobación, acceso, etc... 
         |
 	*/
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
-        
-        /*
-	public function index()
-	{
-		return view('serverstate')->with('id',$id);
-	}
-        */
-        
+               
 	/**
 	 * Autentica un id de teléfono frente a nuestro sistema
 	 *
 	 * @return Response
 	 */        
-        public function authenticate($id) {
+        public function check($id) {
             
                   //Indicar si aparece en nuestra base de datos
                   // Los números de teléfono son de 9 dígitos y empiezan por 6
             
-                  $results = DB::select('select * from phone where number = ?', [$id]);
+                  $existeTelefono = PhoneModel::containsPhone($id);
                   
-                  var_dump($results);
-                  
-            
-           	  return "TRUE";
-            
+                  if ( $existeTelefono ) {
+                    return "TRUE";
+                  } else {
+                      return "FALSE";
+                  }                              
         }
 }

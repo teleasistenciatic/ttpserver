@@ -26,7 +26,7 @@ Route::get('serverstatus/{id}', 'Server\ServerStateController@show');
 | Comprobación de usuario de movil y envío de tokens de sesión
 |--------------------------------------------------------------------------
 */
-Route::get('phone/check/{id}', 'Phone\PhoneController@authenticate');
+Route::get('phone/check/{id}', 'Phone\PhoneController@check');
 
 /*
 |--------------------------------------------------------------------------

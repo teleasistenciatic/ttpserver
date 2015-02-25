@@ -13,7 +13,13 @@ return [
 	|
 	*/
 
-	'fetch' => PDO::FETCH_CLASS,
+        // FESEJU 25/02/15
+        // Si usamos fetch_class nos devuelve un conjunto de objetos de clase
+        // stdClass que no necesitamos. Se cambia el modo de datos de la BDD
+        // para que devuelva arrays asociativos.
+	//'fetch' => PDO::FETCH_CLASS,
+    
+        'fetch' => PDO::FETCH_ASSOC,
 
 	/*
 	|--------------------------------------------------------------------------
