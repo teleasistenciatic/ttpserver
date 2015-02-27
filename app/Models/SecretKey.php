@@ -1,5 +1,5 @@
 <?php
 
-define("CRYPT_KEY","saskjdcnaskdcnaskcnaskdnk");
+define("CRYPT_KEY","");
 
 ?>
