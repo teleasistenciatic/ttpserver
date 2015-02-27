@@ -30,6 +30,16 @@ Route::get('phone/check/{id}', 'Phone\PhoneController@check');
 
 /*
 |--------------------------------------------------------------------------
+| Acciones para debug, que se eliminarán en produccion o se activarán sólo
+| con los permisos de usuario correspondiente
+|--------------------------------------------------------------------------
+*/
+
+Route::get('debug/cifrar/{id}', 'Debug\CifradoController@cifrar');
+Route::get('debug/descifrar/{id}', 'Debug\CifradoController@descifrar');
+
+/*
+|--------------------------------------------------------------------------
 | Autenticación y registro autogenerados
 |--------------------------------------------------------------------------
 */

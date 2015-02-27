@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Models\PhoneModel;
+use App\Models\CifradoModel;
 
 
 class PhoneController extends Controller {
@@ -21,17 +22,18 @@ class PhoneController extends Controller {
 	 *
 	 * @return Response
 	 */        
-        public function check($id) {
+        public function check($id) {        
             
                   //Indicar si aparece en nuestra base de datos
                   // Los números de teléfono son de 9 dígitos y empiezan por 6
             
-                  $existeTelefono = PhoneModel::containsPhone($id);
+                  $existeTelefono = PhoneModel::containsPhone($id);           
                   
                   if ( $existeTelefono ) {
                     return "TRUE";
                   } else {
-                      return "FALSE";
+                      return "FALSE"; //Server 404 
                   }                              
         }
+              
 }

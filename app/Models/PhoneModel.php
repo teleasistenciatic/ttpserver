@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Models\CifradoModel;
 
     /*
     |--------------------------------------------------------------------------
@@ -16,13 +17,14 @@ class PhoneModel extends Model {
     
     /*
     |--------------------------------------------------------------------------
-    | getPhone: query del numero de teléfono 
+    | getPhone: consulta del numero de teléfono 
     |--------------------------------------------------------------------------
     |
     */
 
     public static function getPhone ($id) {
-        return DB::select('select * from phone where number = ?', [$id]);
+        return CifradoModel::cifrar($id);
+        //return DB::select('select * from phone where number = ?', [$id]);
     }
     
     /*
@@ -37,13 +39,7 @@ class PhoneModel extends Model {
 
     public static function containsPhone ($id) {
         
-                  $results = Self::getPhone($id);
-                  
-                  if ( isset($results[0]) ) {
-                      //var_dump($results[0]['number']);
-                    return TRUE;
-                  } else {
-                      return FALSE;
-                  }
-    }    
+        return CifradoModel::cifrar($id);
+    }
+         
 }
