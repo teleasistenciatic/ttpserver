@@ -2,6 +2,7 @@
 
 define("CRYPT_IV","kxp5j29vn4d8e0sq");
 
+// Por seguridad y para que no se incluya en el repositorio
 include('SecretKey.php');
 
 
