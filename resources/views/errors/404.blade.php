@@ -34,7 +34,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Be right back.</div>
+				<div class="title"><b>Error 404</b>.<br> Ups... seguro que no es la página que andabas buscando</div>
 			</div>
 		</div>
 	</body>

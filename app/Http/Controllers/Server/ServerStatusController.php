@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Controller;
 
-class ServerStateController extends Controller {
+class ServerStatusController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -32,8 +32,9 @@ class ServerStateController extends Controller {
 	 */
 	public function index()
 	{
-                $id = '';
-		return view('serverstate')->with('id',$id);
+                return "true";
+                /*$id = '';
+		return view('serverstate')->with('id',$id);*/
 	}
         
 	/**
@@ -41,9 +42,12 @@ class ServerStateController extends Controller {
 	 *
 	 * @return Response
 	 */        
+        
+        /*
         public function show($id) {
             
-            	  return view('serverstate')->with('id',$id);
+            	  return view('serverstatus')->with('id',$id);
             
         }
+        */
 }

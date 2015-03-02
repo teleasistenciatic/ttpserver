@@ -18,8 +18,8 @@ Route::get('/', 'WelcomeController@index');
 | Estado del servidor
 |--------------------------------------------------------------------------
 */
-Route::get('serverstatus', 'Server\ServerStateController@index');
-Route::get('serverstatus/{id}', 'Server\ServerStateController@show');
+Route::get('serverstatus', 'Server\ServerStatusController@index');
+//Route::get('serverstatus/{id}', 'Server\ServerStatusController@show');
 
 /*
 |--------------------------------------------------------------------------
