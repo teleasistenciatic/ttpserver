@@ -23,10 +23,25 @@ Route::get('serverstatus', 'Server\ServerStatusController@index');
 
 /*
 |--------------------------------------------------------------------------
-| Comprobación de usuario de movil y envío de tokens de sesión
+| Comprobación de usuario de movil 
 |--------------------------------------------------------------------------
 */
 Route::get('phone/check/{id}', 'Phone\PhoneController@check');
+
+/*
+|--------------------------------------------------------------------------
+| Manejo de Avisos 
+|--------------------------------------------------------------------------
+*/
+Route::get('aviso/create/{id}', 'Aviso\AvisoController@create');
+Route::get('aviso/check/{id}', 'Aviso\AvisoController@check');
+
+/*
+|--------------------------------------------------------------------------
+| Usuario móvil 
+|--------------------------------------------------------------------------
+*/
+Route::get('phoneuser/name/{id}', 'PhoneUser\PhoneUserController@getPhoneUserNameById');
 
 /*
 |--------------------------------------------------------------------------

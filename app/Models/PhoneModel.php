@@ -61,9 +61,7 @@ class PhoneModel extends Model {
 
     public static function containsPhone($number) {
    
-        $count = DB::table('phone')->where('number', $number )->count();
-        //DEBUG: echo "El valor es:"; var_dump($count);
-                
+        $count = DB::table('phone')->where('number', $number )->count();               
         //$number_db = DB::select('select * from phone where number = ?', [$number]);
         if ( $count == 1 ) { //count devuelve 1 registro si lo encuentra
             Log::info('El teléfono se encuentra en la base de datos: '.$number);
