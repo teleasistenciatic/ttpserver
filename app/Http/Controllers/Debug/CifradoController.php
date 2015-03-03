@@ -27,5 +27,6 @@ class CifradoController extends Controller {
            
                   return CifradoModel::descifrar($id);           
                                               
-        }          
+        }     
+        
 }

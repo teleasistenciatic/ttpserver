@@ -39,7 +39,7 @@ class PhoneController extends Controller {
         
         //Cuando se intenta descifrar por fuerza bruta, se producen muchas cadenas
         //con caracteres extraños "F6R>·ÀI©ØÃhäx". Tras el descifrado hay que
-        //comprobar que el numero de teléfono está bien formado. 
+        //comprobar que el numero de teléfono esté bien formado. 
         // TODO clase sanitize
 
         if ( PhoneModel::isValidPhoneNumber($idDescifrado) == true ) {
@@ -52,7 +52,7 @@ class PhoneController extends Controller {
             }
         }
                
-        return view('errors\404'); //No damos información al "atacante"
+        return view('errors.404'); //No damos información al "atacante"
     }
 
 }
