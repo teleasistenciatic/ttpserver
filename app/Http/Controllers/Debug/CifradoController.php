@@ -15,6 +15,16 @@ class CifradoController extends Controller {
         | de comprobación, acceso, etc... 
         |
 	*/
+    
+	public function __construct()
+	{
+		$this->middleware('auth');
+                //echo Auth::user()->name;
+                //var_dump($this); exit;
+                
+                //Sólo administradores, no usuarios identificados
+                
+	}    
                
         
         public function cifrar($id) {        

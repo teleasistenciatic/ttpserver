@@ -41,11 +41,10 @@ class AvisoModel extends Model {
         
         //Si existe se hace un update                  
         $filasAfectadas = DB::table('aviso')
-        ->where('number', $number)
+        ->where( array('number' => $number, 'status' => 0) ) // Status activo
         ->update( array('time' => $mysqldatetime) );           
 
         return $filasAfectadas;
-            
     }
     
     /*
@@ -82,5 +81,24 @@ class AvisoModel extends Model {
             return false;
         }
     }
+    
+    /*
+      |--------------------------------------------------------------------------
+      | Obtener la lista completa de avisos
+      |--------------------------------------------------------------------------
+      |
+     */
 
+    public static function getAvisosListByStatus($status) {
+
+        //SELECT aviso.id, aviso.number, aviso.time, phone.name FROM aviso,phone WHERE aviso.number = phone.number
+        //$avisos = DB::select('select * from aviso where status = ?', [$status]);
+        
+        $avisos = DB::select('SELECT aviso.id, aviso.number, aviso.time, phone.name '
+                           . 'FROM aviso,phone '
+                           . 'WHERE aviso.number = phone.number and status = ?', [$status]);
+        
+        return $avisos;
+    }
+    
 }
