@@ -21,7 +21,7 @@
 
                             @foreach ($listaAvisos as $aviso)
 
-                            <tr class='clickable-row' data-href='aviso/edit/{{ $aviso['id'] }}'>
+                            <tr class='clickable-row' data-href='gestionavisos/showedit/{{ $aviso['id'] }}'>
                                 <td>{{ $aviso['time'] }}</td>
                                 <td>{{ $aviso['number'] }}</td>
                                 <td>{{ $aviso['name'] }}</td>

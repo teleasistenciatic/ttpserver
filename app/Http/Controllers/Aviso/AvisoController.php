@@ -21,6 +21,8 @@ use App\Models\CifradoModel;
 
 class AvisoController extends Controller {
     
+    public static $FALSO_AVISO = 3; //TODO único fichero de configuración
+    
     /*
     |--------------------------------------------------------------------------
     | crear un nuevo aviso
@@ -99,4 +101,37 @@ class AvisoController extends Controller {
         }
             
     }
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Borrado del aviso
+    |--------------------------------------------------------------------------
+    | Realmente no se borra, se hace un update del estado
+    |
+    */
+    public function delete($idCifrado) {
+
+        //¿Existe el telefono en la base de datos?
+        $number = CifradoModel::descifrar($idCifrado);
+        
+        $existeTelefono = PhoneModel::containsPhone($number);
+               
+        if ( !$existeTelefono ) {
+            return view('errors.404');
+        }
+               
+        // UPDATE
+        //Si existe la alarma, se hace un update de su status
+        $resultado = AvisoModel::updateStatusAviso($number,Self::$FALSO_AVISO);
+            
+        if ( $resultado > 0 ) {
+            
+            return "true";
+            
+        } else {
+            
+            return view('errors.404'); //No damos información al "atacante"
+        }       
+    }    
+    
 }

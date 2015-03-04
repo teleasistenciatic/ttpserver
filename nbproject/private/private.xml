@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ttpserver/app/Http/Controllers/PhoneUser/PhoneUserController.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Http/Controllers/GestionAvisosController.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Models/AvisoModel.php</file>
             <file>file:/C:/xampp/htdocs/ttpserver/app/Http/routes.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/resources/views/gestionavisos.blade.php</file>
         </group>
     </open-files>
 </project-private>

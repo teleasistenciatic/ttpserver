@@ -7,19 +7,19 @@ use Illuminate\Support\Facades\DB;
 use Log;
 
 /*
-  |--------------------------------------------------------------------------
-  | Modelo de acceso a datos los avisos
-  |--------------------------------------------------------------------------
-  |
- */
+|--------------------------------------------------------------------------
+| Modelo de acceso a datos los avisos
+|--------------------------------------------------------------------------
+|
+*/
 
 class AvisoModel extends Model {
     /*
-      |--------------------------------------------------------------------------
-      | Crea un nuevo aviso
-      |--------------------------------------------------------------------------
-      |
-     */
+    |--------------------------------------------------------------------------
+    | Crea un nuevo aviso
+    |--------------------------------------------------------------------------
+    |
+   */
 
     public static function newAviso($number, $datetime, $status) {
                                     
@@ -47,6 +47,21 @@ class AvisoModel extends Model {
         return $filasAfectadas;
     }
     
+     /*
+     |--------------------------------------------------------------------------
+     | Actualizamos el estado de un aviso
+     |--------------------------------------------------------------------------
+     |
+     */
+    public static function updateStatusAviso($number,$status) {    
+                       
+        $filasAfectadas = DB::table('aviso')
+        ->where( array('number' => $number) ) 
+        ->update( array('status' => $status) );           
+
+        return $filasAfectadas;
+    }
+    
     /*
     |---------------------------------------------------------------------------
     | Chequea si existe un aviso previo activo
@@ -65,11 +80,28 @@ class AvisoModel extends Model {
     }
     
     /*
-      |--------------------------------------------------------------------------
-      | Chequea si existe un aviso previo de cualquier tipo
-      |--------------------------------------------------------------------------
-      |
-     */
+    |---------------------------------------------------------------------------
+    | Chequea si existe un aviso por su ID
+    |---------------------------------------------------------------------------
+    |
+    */
+    public static function containsAvisoActivoById($number) {
+
+        $aviso = DB::select('select * from aviso where id = ?', [$number]);
+
+        if ( $aviso ) {
+            return true;
+        } else {
+            return false;
+        }
+    }    
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Chequea si existe un aviso previo de cualquier tipo
+    |--------------------------------------------------------------------------
+    |
+    */
 
     public static function containsAviso($number) {
 
@@ -100,5 +132,21 @@ class AvisoModel extends Model {
         
         return $avisos;
     }
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Obtener información de un aviso con su id
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    public static function getAvisoById($id) {
+       
+        $aviso = DB::select( 'SELECT * '
+                           . 'FROM aviso '
+                           . 'WHERE id = ?', [$id]);
+        
+        return $aviso;
+    }    
     
 }

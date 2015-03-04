@@ -35,6 +35,16 @@ Route::get('phone/check/{id}', 'Phone\PhoneController@check');
 */
 Route::get('aviso/create/{id}', 'Aviso\AvisoController@create');
 Route::get('aviso/check/{id}', 'Aviso\AvisoController@check');
+Route::get('aviso/delete/{id}', 'Aviso\AvisoController@delete');
+
+/*
+|--------------------------------------------------------------------------
+| Gestión de avisos
+|--------------------------------------------------------------------------
+*/
+
+Route::get('gestionavisos', 'GestionAvisosController@index');
+Route::get('gestionavisos/showedit/{id}', 'GestionAvisosController@showedit');
 
 /*
 |--------------------------------------------------------------------------
@@ -52,15 +62,6 @@ Route::get('phoneuser/name/{id}', 'PhoneUser\PhoneUserController@getPhoneUserNam
 
 Route::get('debug/cifrar/{id}', 'Debug\CifradoController@cifrar');
 Route::get('debug/descifrar/{id}', 'Debug\CifradoController@descifrar');
-
-/*
-|--------------------------------------------------------------------------
-| Gestión de avisos
-|--------------------------------------------------------------------------
-*/
-
-Route::get('gestionavisos', 'GestionAvisosController@index');
-
 
 /*
 |--------------------------------------------------------------------------
