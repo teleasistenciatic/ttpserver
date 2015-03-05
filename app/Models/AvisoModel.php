@@ -131,7 +131,7 @@ class AvisoModel extends Model {
     
     /*
       |--------------------------------------------------------------------------
-      | Obtener la lista completa de avisos
+      | Obtener la lista de avisos
       |--------------------------------------------------------------------------
       |
      */
@@ -141,12 +141,46 @@ class AvisoModel extends Model {
         //SELECT aviso.id, aviso.number, aviso.time, phone.name FROM aviso,phone WHERE aviso.number = phone.number
         //$avisos = DB::select('select * from aviso where status = ?', [$status]);
         
-        $avisos = DB::select('SELECT aviso.id, aviso.number, aviso.time, phone.name '
+        $avisos = DB::select('SELECT aviso.id, aviso.number, aviso.time, aviso.status, phone.name '
                            . 'FROM aviso,phone '
                            . 'WHERE aviso.number = phone.number and status = ?', [$status]);
         
+        //Es más simple mediante código devolver el nombre del estado
+        for( $i = 0; $i < count($avisos); $i++) {
+            
+         $avisos[$i]['statusname'] = Self::getStatusNameById($avisos[$i]['status']);
+         
+        }        
+        
         return $avisos;
     }
+    
+    /*
+      |--------------------------------------------------------------------------
+      | Obtener la lista COMPLETA de avisos
+      |--------------------------------------------------------------------------
+      |
+     */
+
+    public static function getAvisosList() {
+
+        //SELECT aviso.id, aviso.number, aviso.time, phone.name FROM aviso,phone WHERE aviso.number = phone.number
+        //$avisos = DB::select('select * from aviso where status = ?', [$status]);
+        
+        $avisos = DB::select('SELECT aviso.id, aviso.number, aviso.time, phone.name, aviso.status '
+                           . 'FROM aviso,phone '
+                           . 'WHERE aviso.number = phone.number');
+        
+        //Es más simple mediante código devolver el nombre del estado
+        for( $i = 0; $i < count($avisos); $i++) {
+            
+         $avisos[$i]['statusname'] = Self::getStatusNameById($avisos[$i]['status']);
+         
+        }
+  
+        
+        return $avisos;
+    }    
     
     /*
     |--------------------------------------------------------------------------

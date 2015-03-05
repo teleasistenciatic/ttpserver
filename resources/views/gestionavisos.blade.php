@@ -17,6 +17,7 @@
                                 <td>Hora y fecha</td>
                                 <td>Número de teléfono</td>
                                 <td>Beneficiario</td>  
+                                <td>Estado del aviso</td>                                 
                             </tr>                      
 
                             @foreach ($listaAvisos as $aviso)
@@ -25,6 +26,7 @@
                                 <td>{{ $aviso['time'] }}</td>
                                 <td>{{ $aviso['number'] }}</td>
                                 <td>{{ $aviso['name'] }}</td>
+                                <td>{{ $aviso['statusname'] }}</td>                            
                             </tr>
 
                             @endforeach

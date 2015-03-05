@@ -32,10 +32,25 @@ class GestionAvisosController extends Controller {
         //Recuperar los avisos
         $listaAvisos = AvisoModel::getAvisosListByStatus(0);
         //var_dump($listaAvisos); exit;
-        //$listaAvisos = ['1','2','3'];
+        $activos = 'activos';
 
-        return view('gestionavisos.gestionavisos', compact('listaAvisos'));
+        return view('gestionavisos.gestionavisos', compact('listaAvisos','activos'));
     }
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Listado de avisos activos
+    |--------------------------------------------------------------------------
+    |
+   */
+
+    public function showAllAvisos() {
+        //Recuperar los avisos
+        $listaAvisos = AvisoModel::getAvisosList();
+        $activos = '';
+
+        return view('gestionavisos.gestionavisos', compact('listaAvisos','activos'));
+    }    
 
     /*
     |--------------------------------------------------------------------------

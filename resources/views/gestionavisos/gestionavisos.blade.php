@@ -9,7 +9,7 @@
                 <div class="panel-heading">Gestión de avisos</div>
 
                 <div class="panel-body">
-                    Listado de todos los avisos <b>activos</b>:<hr>
+                    Listado de todos los avisos <b>{{ $activos }}</b>:<hr>
                     
                     <div class="tabla" >
                         <table>
@@ -17,14 +17,16 @@
                                 <td>Hora y fecha</td>
                                 <td>Número de teléfono</td>
                                 <td>Beneficiario</td>  
+                                <td>Estado</td>                                  
                             </tr>                      
 
                             @foreach ($listaAvisos as $aviso)
 
-                            <tr class='clickable-row' data-href='gestionavisos/showedit/{{ $aviso['id'] }}'>
+                            <tr class='clickable-row' data-href='/gestionavisos/showedit/{{ $aviso['id'] }}'>
                                 <td>{{ $aviso['time'] }}</td>
                                 <td>{{ $aviso['number'] }}</td>
                                 <td>{{ $aviso['name'] }}</td>
+                                <td>{{ $aviso['statusname'] }}</td>                                
                             </tr>
 
                             @endforeach
@@ -32,7 +34,7 @@
                     </div>
                 </div>
                 <div class="panel-heading">
-                    <a href="{{ URL::previous() }}"><b>Volver</b></a>
+                    <a href="/home"><b>Volver</b></a>
                 </div>                
             </div>
         </div>

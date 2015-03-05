@@ -29,7 +29,7 @@
                     </ul>
                 </div>    
                 <div class="panel-heading">
-                    <a href="{{ URL::previous() }}"><b>Volver</b></a>
+                    <a href="/gestionavisos"><b>Volver</b></a>
                 </div>                
             </div>
         </div>

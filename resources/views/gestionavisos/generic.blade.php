@@ -14,9 +14,8 @@
                 
                 <div class="panel-body">
                     {{$contenido}}
-                    
-                    
                 </div>  
+                
                 <div class="panel-heading">
                     <a href="{{ URL::previous() }}"><b>Volver</b></a>
                 </div>
