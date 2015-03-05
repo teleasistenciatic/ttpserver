@@ -142,11 +142,42 @@ class AvisoModel extends Model {
 
     public static function getAvisoById($id) {
        
-        $aviso = DB::select( 'SELECT * '
-                           . 'FROM aviso '
-                           . 'WHERE id = ?', [$id]);
+        $aviso = DB::select('SELECT aviso.id, aviso.number, aviso.time, aviso.status, phone.name '
+                           . 'FROM aviso,phone '
+                           . 'WHERE aviso.number = phone.number and id = ?', [$id]);
         
         return $aviso;
-    }    
+    }   
     
+    /*
+    |--------------------------------------------------------------------------
+    | OBtiene el nombre de un estado según su identificativo
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    public static function getStatusNameById($id) {
+       
+        $aviso = DB::select('SELECT name '
+                           . 'FROM avisostatus '
+                           . 'WHERE id = ?', [$id]);
+        
+           //var_dump($aviso);
+        
+        return $aviso[0]['name'];
+    }     
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Borra un aviso por su aviso
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    public static function deleteAvisoById($id) {
+       
+        $aviso = DB::table('aviso')->where('id', '=', $id)->delete();
+        
+        return $aviso;
+    }       
 }

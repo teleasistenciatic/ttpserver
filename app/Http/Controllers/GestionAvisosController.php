@@ -34,7 +34,7 @@ class GestionAvisosController extends Controller {
         //var_dump($listaAvisos); exit;
         //$listaAvisos = ['1','2','3'];
 
-        return view('gestionavisos', compact('listaAvisos'));
+        return view('gestionavisos.gestionavisos', compact('listaAvisos'));
     }
 
     /*
@@ -56,9 +56,39 @@ class GestionAvisosController extends Controller {
         //generar la view
         
         $aviso = AvisoModel::getAvisoById($id);
+        $aviso = $aviso[0]; //Pasamos la primera row del array
+        $aviso['statusname'] = AvisoModel::getStatusNameById($aviso['status']);
         
-        var_dump($aviso);
-        exit;
+        return view('gestionavisos.showedit',  compact('aviso'));
     }
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Eliminar un aviso
+    |--------------------------------------------------------------------------
+    |
+   */
+
+    public function delete($id) {
+
+        $existe = AvisoModel::containsAvisoActivoById($id);
+
+        if (!$existe) {
+            return view('errors.404');
+        }
+        
+        
+        $aviso = AvisoModel::deleteAvisoById($id);
+        var_dump($aviso);
+        $titulo = "Borrado de un aviso";
+        
+        if ($aviso == 1) {
+            $contenido = "Aviso correctamente eliminado";
+        } else {
+            $contenido = "Se ha producido un error al eliminar el aviso";
+        }
+
+        return view('gestionavisos.generic',  compact('titulo','contenido'));
+    }    
 
 }
