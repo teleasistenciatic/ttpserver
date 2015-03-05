@@ -8,14 +8,38 @@
     @endforeach
 </ul>
 
-    {!! Form::open([]) !!}
+{!! Form::open(array('route' => 'gestionavisos/panelcreatestore', 'class' => 'form')) !!}
 
-    {!! Form::text('name', @$name) !!}
+<div class="form-group">
+    {!! Form::label('Teléfono beneficiario') !!}
+    {!! Form::text('number', null, 
+        array('required', 
+              'class'=>'form-control', 
+              'placeholder'=>'')) !!}
+</div>
 
-    {!! Form::password('password') !!}
+<div class="form-group">
+    {!! Form::label('Fecha y Hora') !!}
+    {!! Form::text('time', null, 
+        array('required', 
+              'class'=>'form-control', 
+              'placeholder'=>'YYYY-MM-DD HH:MM:SS')) !!}
+</div>
 
-    {!! Form::submit('Send') !!}
+<div class="form-group">
+    {!! Form::label('Estado') !!}
+    {!! Form::text('status', null, 
+        array('required',
+              'class'=>'form-control', 
+              'placeholder'=>'0')) !!}
+</div>
 
-    {!! Form::close() !!}
+<div>Estados posibles: 0 - Pendiente, 1 - Atendido, 3 - Falso aviso</div><br>
+
+<div class="form-group">
+    {!! Form::submit('Crear nuevo aviso', 
+      array('class'=>'btn btn-primary')) !!}
+</div>
+{!! Form::close() !!}
 
 @endsection

@@ -50,8 +50,13 @@ Route::get('gestionavisos/delete/{id}', 'GestionAvisosController@delete');
 Route::get('gestionavisos/setstatus/{id}/{status}', 'GestionAvisosController@setStatus');
 
 //Formulario de creación de aviso
-Route::get('gestionavisos/panelcreate', 'GestionAvisosController@panelCreate');
-Route::post('gestionavisos/panelcreatestore', 'GestionAvisosController@panelCreateStore');
+//Route::get('gestionavisos/panelcreate', 'GestionAvisosController@panelCreate');
+//Route::post('gestionavisos/panelcreatestore', 'GestionAvisosController@panelCreateStore');
+
+Route::get('gestionavisos/panelcreate', 
+  ['as' => 'gestionavisos/panelcreate', 'uses' => 'GestionAvisosController@panelCreate']);
+Route::post('gestionavisos/panelcreatestore', 
+  ['as' => 'gestionavisos/panelcreatestore', 'uses' => 'GestionAvisosController@panelCreateStore']);
 
 /*
 |--------------------------------------------------------------------------

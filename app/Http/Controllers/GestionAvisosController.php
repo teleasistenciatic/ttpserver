@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\AvisoModel;
+//use Illuminate\Http\Request;
+use Request;
 
 class GestionAvisosController extends Controller {
     /*
@@ -146,13 +148,28 @@ class GestionAvisosController extends Controller {
    */
 
     public function panelCreate() {
+        
+        //Obtenemos el listado de beneficiarios
+
       
         return view('gestionavisos.panelcreate');
         
     }       
     
     public function panelCreateStore() {
-      
+        
+        //dd($_POST); exit;
+        
+        $input = Request::all();
+        dd($input);
+        exit;
+
+        $number = $_POST['number'];
+        $time = $_POST['time'];
+        $status = $_POST['status'];
+        
+        echo AvisoModel::newAviso($number, $time, $status);
+        
         return view('gestionavisos.panelcreate');
         
     }        

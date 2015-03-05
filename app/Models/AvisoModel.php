@@ -27,7 +27,7 @@ class AvisoModel extends Model {
         $idAutonumericoInsertado = DB::table('aviso')->insertGetId(
         array('time' => $datetime, 'number' => $number, 'status' => $status )  );
 
-        return $idAutonumericoInsertado;  
+        return $idAutonumericoInsertado;
                
     }
 
