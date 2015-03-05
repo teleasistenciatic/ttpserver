@@ -79,7 +79,7 @@ class GestionAvisosController extends Controller {
         
         
         $aviso = AvisoModel::deleteAvisoById($id);
-        var_dump($aviso);
+
         $titulo = "Borrado de un aviso";
         
         if ($aviso == 1) {
@@ -91,4 +91,31 @@ class GestionAvisosController extends Controller {
         return view('gestionavisos.generic',  compact('titulo','contenido'));
     }    
 
+    /*
+    |--------------------------------------------------------------------------
+    | Cambiar el estado de un aviso
+    |--------------------------------------------------------------------------
+    |
+   */
+
+    public function setStatus($id,$status) {
+        
+        $existe = AvisoModel::containsAvisoActivoById($id);
+
+        if (!$existe) {
+            return view('errors.404');
+        }
+                
+        $aviso = AvisoModel::updateStatusAvisoById($id,$status);
+
+        $titulo = "Actualización de estado de un aviso";
+        
+        if ($aviso == 1) {
+            $contenido = "Estado correctamente cambiado";
+        } else {
+            $contenido = "Se ha producido un error al cambiar el estado";
+        }
+
+        return view('gestionavisos.generic',  compact('titulo','contenido'));
+    }       
 }

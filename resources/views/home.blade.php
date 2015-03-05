@@ -10,6 +10,10 @@
 				<div class="panel-body">
                                     <a href="gestionavisos">- Gestión de avisos</a>
 				</div>
+                                
+                <div class="panel-heading">
+                    <a href="{{ URL::previous() }}"><b>Volver</b></a>
+                </div>                                
 			</div>
 		</div>
 	</div>

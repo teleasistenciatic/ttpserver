@@ -22,11 +22,14 @@
                     Operaciones sobre el aviso:<hr>
                     <ul>
                         <li><a href="/gestionavisos/delete/{{ $aviso['id'] }}">Borrar el aviso</a></li>
-                        <li><a href="/gestionavisos/setstatus/0">Marcar el aviso como <b>pendiente</b></a></li>                        
-                        <li><a href="/gestionavisos/setstatus/1">Marcar el aviso como <b>atendido</b></a></li>   
-                        <li><a href="/gestionavisos/setstatus/3">Marcar el aviso como <b>falsa alarma</b></a></li>                            
+                        <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/0">Marcar el aviso como <b>pendiente</b></a></li>                        
+                        <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/1">Marcar el aviso como <b>atendido</b></a></li>   
+                        <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/3">Marcar el aviso como <b>falsa alarma</b></a></li>                            
                                          
                     </ul>
+                </div>    
+                <div class="panel-heading">
+                    <a href="{{ URL::previous() }}"><b>Volver</b></a>
                 </div>                
             </div>
         </div>

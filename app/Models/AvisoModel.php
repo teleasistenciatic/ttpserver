@@ -49,7 +49,7 @@ class AvisoModel extends Model {
     
      /*
      |--------------------------------------------------------------------------
-     | Actualizamos el estado de un aviso
+     | Actualizamos el estado de un aviso por su numero de teléfono
      |--------------------------------------------------------------------------
      |
      */
@@ -61,6 +61,21 @@ class AvisoModel extends Model {
 
         return $filasAfectadas;
     }
+    
+     /*
+     |--------------------------------------------------------------------------
+     | Actualizamos el estado de un aviso por su ID
+     |--------------------------------------------------------------------------
+     |
+     */
+    public static function updateStatusAvisoById($id,$status) {    
+                       
+        $filasAfectadas = DB::table('aviso')
+        ->where( array('id' => $id) ) 
+        ->update( array('status' => $status) );           
+
+        return $filasAfectadas;
+    }    
     
     /*
     |---------------------------------------------------------------------------

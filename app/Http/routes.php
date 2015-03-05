@@ -46,6 +46,7 @@ Route::get('aviso/delete/{id}', 'Aviso\AvisoController@delete');
 Route::get('gestionavisos', 'GestionAvisosController@index');
 Route::get('gestionavisos/showedit/{id}', 'GestionAvisosController@showedit');
 Route::get('gestionavisos/delete/{id}', 'GestionAvisosController@delete');
+Route::get('gestionavisos/setstatus/{id}/{status}', 'GestionAvisosController@setStatus');
 
 /*
 |--------------------------------------------------------------------------
