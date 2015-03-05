@@ -29,12 +29,16 @@
 				font-size: 72px;
 				margin-bottom: 40px;
 			}
+			.subtitle {
+				font-size: 36px;
+				margin-bottom: 40px;
+			}                        
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title"><b>Error 404</b>.<br> Ups... seguro que no es la página que andabas buscando</div>
+                            <div class="title"><b>Error 404</b>:<br> <div class="subtitle">Página no encontrada</div></div>
 			</div>
 		</div>
 	</body>

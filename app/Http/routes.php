@@ -49,6 +49,10 @@ Route::get('gestionavisos/showedit/{id}', 'GestionAvisosController@showedit');
 Route::get('gestionavisos/delete/{id}', 'GestionAvisosController@delete');
 Route::get('gestionavisos/setstatus/{id}/{status}', 'GestionAvisosController@setStatus');
 
+//Formulario de creación de aviso
+Route::get('gestionavisos/panelcreate', 'GestionAvisosController@panelCreate');
+Route::post('gestionavisos/panelcreatestore', 'GestionAvisosController@panelCreateStore');
+
 /*
 |--------------------------------------------------------------------------
 | Usuario móvil 

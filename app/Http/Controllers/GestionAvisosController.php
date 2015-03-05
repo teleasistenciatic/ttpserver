@@ -132,5 +132,28 @@ class GestionAvisosController extends Controller {
         }
 
         return view('gestionavisos.generic',  compact('titulo','contenido'));
+    }      
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Panel de creación de nuevo aviso 
+    |--------------------------------------------------------------------------
+    |
+    | Aunque los avisos los generan los terminales, a nivel de operativa
+    | puede ser necesaria la creación de avisos directamente desde el
+    | aplicativo web.
+    |
+   */
+
+    public function panelCreate() {
+      
+        return view('gestionavisos.panelcreate');
+        
     }       
+    
+    public function panelCreateStore() {
+      
+        return view('gestionavisos.panelcreate');
+        
+    }        
 }
