@@ -11,6 +11,18 @@
 {!! Form::open(array('route' => 'gestionavisos/panelcreatestore', 'class' => 'form')) !!}
 
 <div class="form-group">
+ 
+<select name="beneficiario">
+<option value="0" selected>(seleccionar un beneficiario:)</option>
+    @foreach ($beneficiarios as $ben)
+        <option value="1">{{ $ben }}</option>
+    @endforeach
+</select>
+
+
+
+    
+    <!-- Combo box con los beneficiarios -->
     {!! Form::label('Teléfono beneficiario') !!}
     {!! Form::text('number', null, 
         array('required', 
@@ -27,6 +39,7 @@
 </div>
 
 <div class="form-group">
+    <!-- Combo box con los estados -->
     {!! Form::label('Estado') !!}
     {!! Form::text('status', null, 
         array('required',

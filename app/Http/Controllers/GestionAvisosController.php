@@ -150,15 +150,20 @@ class GestionAvisosController extends Controller {
     public function panelCreate() {
         
         //Obtenemos el listado de beneficiarios
-
-      
-        return view('gestionavisos.panelcreate');
+        $beneficiarios = \App\Models\PhoneUserModel::getAllPhones(); 
+        $status = \App\Models\AvisoModel::getAllStatus();  
         
+        foreach ($beneficiarios as $auxben) {
+            
+        }
+        
+         
+        return view('gestionavisos.panelcreate',  compact('beneficiarios','status'));
     }       
     
     public function panelCreateStore() {
         
-        //dd($_POST); exit;
+        dd($_POST); exit;
         
         $input = Request::all();
         dd($input);

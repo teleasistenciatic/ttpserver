@@ -229,4 +229,15 @@ class AvisoModel extends Model {
         
         return $aviso;
     }       
+    
+    /**
+     * Devolvemos toda la información de los teléfonos con sus beneficiarios
+     * @return type
+     */
+    public static function getAllStatus() {
+                
+        $status = DB::select('select * from avisostatus');
+        return $status;
+        
+    }    
 }

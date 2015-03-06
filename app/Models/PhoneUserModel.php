@@ -31,5 +31,16 @@ class PhoneUserModel extends Model {
         }
         
     }
+    
+    /**
+     * Devolvemos toda la información de los teléfonos con sus beneficiarios
+     * @return type
+     */
+    public static function getAllPhones() {
+                
+        $phonenumber = DB::select('select * from phone');
+        return $phonenumber;
+        
+    }
 
 }
