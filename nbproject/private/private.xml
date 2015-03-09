@@ -4,8 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/ttpserver/app/Http/Controllers/GestionAvisosController.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/resources/views/home.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/resources/views/gestionbeneficiarios/generic.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Models/AvisoModel.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Models/BeneficiarioModel.php</file>
             <file>file:/C:/xampp/htdocs/ttpserver/app/Http/routes.php</file>
-            <file>file:/C:/xampp/htdocs/ttpserver/resources/views/gestionavisos/panelcreate.blade.php</file>
+            <file>file:/C:/xampp/htdocs/ttpserver/app/Http/Controllers/GestionBeneficiariosController.php</file>
         </group>
     </open-files>
 </project-private>

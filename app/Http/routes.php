@@ -64,6 +64,14 @@ Route::post('gestionavisos/panelcreatestore',
 */
 
 Route::get('gestionbeneficiarios', 'GestionBeneficiariosController@index');
+Route::get('gestionbeneficiarios/showedit/{number}', 'GestionBeneficiariosController@showedit');
+Route::get('gestionbeneficiarios/delete/{number}', 'GestionBeneficiariosController@delete');
+
+Route::get('gestionbeneficiarios/panelcreate', 
+  ['as' => 'gestionbeneficiarios/panelcreate', 'uses' => 'GestionBeneficiariosController@panelCreate']);
+Route::post('gestionbeneficiarios/panelcreatestore', 
+  ['as' => 'gestionbeneficiarios/panelcreatestore', 'uses' => 'GestionBeneficiariosController@panelCreateStore']);
+
 
 /*
 |--------------------------------------------------------------------------

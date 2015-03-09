@@ -20,7 +20,7 @@
 				<div class="panel-body">
                                     <ul>
                                         <li><a href="gestionbeneficiarios">- Lista de beneficiarios</a></li>
-                                        <li><a href="gestionavisos/create">- Dar de alta nuevo beneficiario</a></li>
+                                        <li><a href="gestionbeneficiarios/panelcreate">- Dar de alta nuevo beneficiario</a></li>
                                     </ul>
 				</div>         
                                 
