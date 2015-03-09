@@ -20,6 +20,7 @@
                     Operaciones sobre el/la beneficiario/a:<hr>
                     <ul>
                         <li><a href="/gestionbeneficiarios/delete/{{ $beneficiario['number'] }}">Borrar el beneficiario/a (se borrarán los avisos relacionados)</a></li>                                       
+                        <li><a href="/gestionbeneficiarios/edit/{{ $beneficiario['number'] }}">Editar datos beneficiario</a></li>                                                               
                     </ul>
                 </div>    
                 <div class="panel-heading">

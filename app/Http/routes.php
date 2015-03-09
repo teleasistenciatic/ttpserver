@@ -72,6 +72,11 @@ Route::get('gestionbeneficiarios/panelcreate',
 Route::post('gestionbeneficiarios/panelcreatestore', 
   ['as' => 'gestionbeneficiarios/panelcreatestore', 'uses' => 'GestionBeneficiariosController@panelCreateStore']);
 
+Route::get('gestionbeneficiarios/edit/{id}', 
+  ['as' => 'gestionbeneficiarios/edit/{id}', 'uses' => 'GestionBeneficiariosController@edit']);
+Route::post('gestionbeneficiarios/editstore', 
+  ['as' => 'gestionbeneficiarios/editstore', 'uses' => 'GestionBeneficiariosController@editStore']);
+
 
 /*
 |--------------------------------------------------------------------------

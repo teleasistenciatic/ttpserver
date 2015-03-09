@@ -77,6 +77,34 @@ class GestionBeneficiariosController extends Controller {
         return view('gestionbeneficiarios.generic', compact('titulo', 'contenido'));
     }
 
+    
+     /**
+     * 
+     * @return type
+     */
+    public function edit($number) {
+
+        $beneficiario = BeneficiarioModel::getBeneficiario($number);
+
+        $data = [];
+        $data['beneficiario'] = $beneficiario[0];
+
+        return view('gestionbeneficiarios.edit',$data);
+    }
+    
+    public function editStore() {
+
+        $input = Request::all();
+
+        //dd($input); exit;
+        BeneficiarioModel::updateBeneficiario($input['number'], $input['name']);
+
+        $titulo = 'Gestión de beneficiarios';
+        $contenido = 'Edición de beneficiario/a terminada con éxito.';
+
+        return view('gestionbeneficiarios.generic', compact('titulo', 'contenido'));
+    }    
+    
     /**
      * 
      */

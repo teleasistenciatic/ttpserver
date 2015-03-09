@@ -41,6 +41,7 @@ class BeneficiarioModel extends Model {
 
         return $beneficiarios;
     }
+    
 
     public static function newBeneficiario($number, $name) {
 
@@ -49,6 +50,15 @@ class BeneficiarioModel extends Model {
 
         return $idAutonumericoInsertado;
     }
+    
+    public static function updateBeneficiario($number,$name) {    
+                     
+        $filasAfectadas = DB::table('phone')
+        ->where( array( 'number' => $number) ) 
+        ->update( array( 'name' => $name) );           
+
+        return $filasAfectadas;
+    }    
 
     public static function getBeneficiario($number) {
        
