@@ -143,7 +143,7 @@ class AvisoModel extends Model {
         
         $avisos = DB::select('SELECT aviso.id, aviso.number, aviso.time, aviso.status, phone.name '
                            . 'FROM aviso,phone '
-                           . 'WHERE aviso.number = phone.number and status = ?', [$status]);
+                           . 'WHERE aviso.number = phone.number and status = ? ORDER BY aviso.time DESC', [$status]);
         
         //Es más simple mediante código devolver el nombre del estado
         for( $i = 0; $i < count($avisos); $i++) {
@@ -239,5 +239,19 @@ class AvisoModel extends Model {
         $status = DB::select('select * from avisostatus');
         return $status;
         
-    }    
+    } 
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Borra un aviso por su aviso
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    public static function truncateTableAviso() {
+       
+        $aviso = DB::table('aviso')->truncate();
+        
+        return $aviso;
+    }      
 }

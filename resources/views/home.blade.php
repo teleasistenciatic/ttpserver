@@ -9,9 +9,9 @@
 
 				<div class="panel-body">
                                     <ul>
-                                        <li><a href="gestionavisos">- Gestión de avisos activos</a></li>
+                                        <li><a href="gestionavisos">- Lista de avisos activos</a></li>
                                         <li><a href="gestionavisos/list">- Lista histórica de todos los avisos</a></li>
-                                        <li><a href="gestionavisos/panelcreate">- Crear nuevo aviso</a></li>                                        
+                                        <li><a href="gestionavisos/panelcreate">- Crear nuevo aviso</a></li>                                                                            
                                     </ul>
 				</div>   
                                 
@@ -19,8 +19,16 @@
                                 
 				<div class="panel-body">
                                     <ul>
-                                        <li><a href="gestionavisos/create">- Listado de beneficiarios</a></li>
+                                        <li><a href="gestionbeneficiarios">- Lista de beneficiarios</a></li>
                                         <li><a href="gestionavisos/create">- Dar de alta nuevo beneficiario</a></li>
+                                    </ul>
+				</div>         
+                                
+                                <div class="panel-heading">Funciones administrativas</div>
+                                
+				<div class="panel-body">
+                                    <ul>
+                                       <li><a href="gestionavisos/clearlist">- Borrar lista completa de avisos</a></li>    
                                     </ul>
 				</div>                                   
                                                                

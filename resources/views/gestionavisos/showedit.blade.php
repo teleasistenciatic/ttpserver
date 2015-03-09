@@ -24,7 +24,7 @@
                         <li><a href="/gestionavisos/delete/{{ $aviso['id'] }}">Borrar el aviso</a></li>
                         <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/0">Marcar el aviso como <b>pendiente</b></a></li>                        
                         <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/1">Marcar el aviso como <b>atendido</b></a></li>   
-                        <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/3">Marcar el aviso como <b>falsa alarma</b></a></li>                            
+                        <li><a href="/gestionavisos/setstatus/{{ $aviso['id'] }}/3">Marcar el aviso como <b>falso aviso</b></a></li>                            
                                          
                     </ul>
                 </div>    
